@@ -1,0 +1,134 @@
+*{
+    /* outline: 2px dashed purple; */
+    margin: 0;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: black;
+    background-image: url(assets/BG.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+/* @media screen and (max-width: 600px) {
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "q"
+        "h"
+        "e"
+        "b"
+        "f";
+}
+ */
+/* step one - build your grid */
+.container {
+    height: 100%;
+    /* what enables css grib to work  */
+    display: grid;
+    grid-gap: 15px;
+    /* this will be  the same for everyone */
+    /* 1fr, one fraction unit  */
+    grid-template-columns: repeat(12, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: auto;
+    /* use letters from step 2 to build the grid */
+    grid-template-areas: 
+        "k k k k k k k k k k k k"
+        "b b b b b b e e e a a a"
+        "b b b b b b e e e a a a"
+        "b b b b b b e e e a a a";
+    
+}
+
+/* step three - build a grid that becomes active when the pixels are 800px or less */
+@media screen and (max-width: 800px) {
+
+    .container{
+        display: grid;
+        grid-gap: 15px;
+        /* grid is only one column, keep this way */
+        grid-template-columns: 1fr;
+        /* you can enter values, or auto will adjust the box sizes based on content */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "q"
+        "h"
+        "b"
+        "e"
+        "f"
+        "k";
+    }
+}
+.center{
+    display: block;
+    width: 150px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
+}
+.indent{
+    padding-left: 35px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    list-style-type: circle;
+}
+
+header {
+    grid-area: k;
+    padding-bottom: 60px;
+    background-color: black;
+}
+
+.work {
+    grid-area: b;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    background-color: azure;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.education {
+    grid-area: e;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: azure;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.skills {
+    grid-area: a;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: azure;
+    border-radius: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.desc{
+    padding-top: 20px;
+}
+
+h2{
+    padding-top: 50px;
+}
+
+.name{
+    text-align: center;
+    color: white;
+}
+
+.bullet{
+    list-style: none;
+}
